@@ -84,7 +84,7 @@ app.put('/api/budget', (req, res) => {
   });
 });
 
-
-app.listen(5000, () => {
-  console.log('Backend சர்வர் http://localhost:5000 -ல் இயங்குகிறது');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Backend சர்வர் ${PORT} போர்ட்டில் இயங்குகிறது`);
 });

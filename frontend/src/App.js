@@ -16,8 +16,9 @@ function App() {
   const [budgetLimit, setBudgetLimit] = useState(0);
   const [newBudget, setNewBudget] = useState('');
 
-  const API_URL = 'http://localhost:5000/api/expenses';
-  const BUDGET_URL = 'http://localhost:5000/api/budget';
+  const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API_URL = `${BASE_URL}/api/expenses`;
+  const BUDGET_URL = `${BASE_URL}/api/budget`;
 
   useEffect(() => {
     fetchExpenses();
